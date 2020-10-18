@@ -50,8 +50,6 @@ public class watcherService {
 
             JsonParser jsonParser = new JsonParser();
 
-
-
             System.out.println(result);
             JsonObject k = (JsonObject) jsonParser.parse(result);
             String id = k.get("id").getAsString();
@@ -59,7 +57,6 @@ public class watcherService {
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
-
     }
 
     public void getActive(String id) {
@@ -131,8 +128,6 @@ public class watcherService {
 
             JsonParser jsonParser = new JsonParser();
 
-
-
             System.out.println(result);
             JsonObject k = (JsonObject) jsonParser.parse(result);
             String id = k.get("id").getAsString();
@@ -145,8 +140,6 @@ public class watcherService {
     // HTTP POST request
     public void sendPost() throws Exception
     {
-
-
         String parameters = "template_object={   \"object_type\" : \"text\",   \"text\" : \"fff\",   \"link\" : {     \"web_url\" : \"https://mrkevinna.github.io\",      \"mobile_web_url\" : \"https://mrkevinna.github.io\"   },   \"button_title\" : \"Check it out!\" }";
         URL url = new URL(kakao_url);
         HttpsURLConnection con = (HttpsURLConnection) url.openConnection();
@@ -168,9 +161,11 @@ public class watcherService {
 
         String inputLine;
         StringBuffer response = new StringBuffer();
-        while ((inputLine = in.readLine()) != null) { response.append(inputLine); } in.close();
+        while ((inputLine = in.readLine()) != null) {
+            response.append(inputLine);
+        }
+        in.close();
         // print result
         System.out.println("HTTP 응답 코드 : " + responseCode);
         System.out.println("HTTP body : " + response.toString()); }
-
 }
