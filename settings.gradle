@@ -1,1 +1,6 @@
-rootProject.name = 'watcher'
+rootProject.name = 'lol_finder'
+
+
+include 'service-core'
+include 'service-front'
+include 'service-mvc'
